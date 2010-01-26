@@ -58,7 +58,7 @@ simulate_sis(formula, nsim=1, \dots,
 
 \value{Returns a single bipartite \code{\link[network]{network}} object. 
   In addition the object has network attributes (using \code{\%n\%}):
-  \item{samplestatistics}{The n $\times$ p matrix of the graph statistics produced by the sampled graphs, where n is the number
+  \item{samplestatistics}{The \eqn{n\times p} matrix of the graph statistics produced by the sampled graphs, where n is the number
 of simulated graphs and p is the number of different graph statistics under consideration.}
   \item{log.prob}{The vector of the logarithm of the probability of being sampled.}
   \item{log.graphspace.size}{The logarithm of the mean estimate of the number of graphs in the graph space.}

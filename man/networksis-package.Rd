@@ -1,8 +1,8 @@
-%  File ergm/man/networksis-package.Rd
-%  Part of the statnet package, http://statnetproject.org
+%  File networksis/man/networksis-package.Rd
+%  Part of the statnet package, http://statnet.org
 %  This software is distributed under the GPL-3 license.  It is free,
 %  open source, and has the attribution requirements (GPL Section 7) in
-%    http://statnetproject.org/attribution
+%    http://statnet.org/attribution
 %
 % Copyright 2003 Mark S. Handcock, University of Washington
 %                David R. Hunter, Penn State University
@@ -23,7 +23,7 @@ The \code{\link[networksis]{networksis}} package is a collection of functions to
 simulate bipartite graphs with fixed marginals.  For a list of functions, type: 
 help(package='networksis').
 
-This package is compatible with the \code{\link[statnet]{statnet}} suite of packages, 
+This package is compatible with the \code{statnet} suite of packages, 
 a collection of functions to plot, fit, diagnose, and simulate from random 
 graph models. 
 

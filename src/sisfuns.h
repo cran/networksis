@@ -16,7 +16,7 @@
 #ifndef SIS_H
 #define SIS_H
 
-#include "edgeTree.h"
+#include "edgetree.h"
 
 void sisconj (int *colsums, int *conjseq, int nrow, int ncol, int i);
 void sissort(int *rowsums, int *order, int nrow);

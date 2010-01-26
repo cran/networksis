@@ -15,7 +15,7 @@
  */
 #include "sisfuns.h"
 #include "sisdraw.h"
-#include "edgeTree.h"
+#include "edgetree.h"
 void sisdraw(int *rowsums, int *colsums, int *newmat, 
              int *nrow, int *ncol, 
              int *heads, int *tails,
@@ -161,7 +161,7 @@ void ChangeStats(unsigned int ntoggles, Vertex *togglehead, Vertex *toggletail,
   for (unsigned int i=0; i < m->n_terms; i++){
     /* Calculate change statistics */
     mtp->dstats = dstats; /* Stuck the change statistic here.*/
-    (*(mtp->func))(ntoggles, togglehead, toggletail, 
+    (*(mtp->d_func))(ntoggles, togglehead, toggletail, 
                    mtp, nwp);  /* Call d_??? function */
     dstats += (mtp++)->nstats;
   }

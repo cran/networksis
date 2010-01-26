@@ -52,26 +52,12 @@ sis.simulate<-function(g, formula, m, Clist, nsim=10000,
 
   if(control$parallel==0){
     suff.stats <- networksis.slave(row.sums,col.sums,nrow,ncol,edgelist,Clist,nsim,verb)
-    suff.stats.mat<-matrix(suff.stats$s, byrow=TRUE,nrow=nsim, ncol=Clist$nparam)
+    suff.stats.mat<-matrix(suff.stats$s, byrow=TRUE,nrow=nsim, ncol=Clist$nstats)
     probvec<-suff.stats$probvec
   }else{
     nsim.parallel <- round(nsim / control$parallel)
     require(snow)
-#
-# Start PVM if necessary
-#
-    if(snow::getClusterOption("type")=="PVM"){
-     if(verbose){cat("Engaging warp drive using PVM ...\n")}
-     require(rpvm)
-     PVM.running <- try(rpvm::.PVM.config(), silent=TRUE)
-     if(inherits(PVM.running,"try-error")){
-      hostfile <- paste(Sys.getenv("HOME"),"/.xpvm_hosts",sep="")
-      rpvm::.PVM.start.pvmd(hostfile)
-      cat("no problem... PVM started by networksis...\n")
-     }
-    }else{
-     if(verbose){cat("Engaging warp drive using MPI ...\n")}
-    }
+    if(verbose){cat("Engaging warp drive using MPI ...\n")}
 #
 #   Start Cluster
 #
@@ -79,7 +65,7 @@ sis.simulate<-function(g, formula, m, Clist, nsim=10000,
     snow::clusterSetupRNG(cl)
     snow::clusterEvalQ(cl,library(networksis))
 #
-#   Run the jobs with rpvm or Rmpi
+#   Run the jobs with Rmpi
 #
     outlist <- snow::clusterCall(cl,networksis.slave,
      row.sums,col.sums,nrow,ncol,edgelist,Clist,nsim.parallel,verb)
@@ -92,7 +78,7 @@ sis.simulate<-function(g, formula, m, Clist, nsim=10000,
      suff.stats <- outlist[[i]]
      suff.stats.mat <- rbind(suff.stats.mat,
        matrix(suff.stats$s, nrow=nsim.parallel,
-       ncol=Clist$nparam,
+       ncol=Clist$nstats,
        byrow = TRUE))
      probvec<-c(probvec,suff.stats$probvec)
     }
@@ -155,11 +141,11 @@ networksis.slave <- function(row.sums,col.sums,nrow,ncol,edgelist,Clist,nsim,ver
     heads=as.integer(edgelist[,1]), 
     tails=as.integer(edgelist[,2]), 
     as.integer(Clist$nedges), as.integer(Clist$n),
-    as.integer(Clist$nterms), 
+    as.integer(Clist$nstats), 
     as.character(Clist$fnamestring), as.character(Clist$snamestring), 
     as.double(Clist$inputs), 
     as.double(nsim),
-    s = double(nsim * Clist$nparam),
+    s = double(nsim * Clist$nstats),
     as.integer(verb),
     prob=as.double(1), probvec=double(nsim), 
     PACKAGE="networksis")
