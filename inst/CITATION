@@ -1,59 +1,39 @@
-authors <- c("Mark S. Handcock", "David R. Hunter", "Carter T. Butts",
-             "Steven M. Goodreau", "Pavel N. Krivitsky", "Martina Morris")
-projhomepage <- "http://statnet.org"
-
-statnettitle <- "statnet: Software Tools for the Statistical Modeling of Network Data"
-statnetversion <- "2.0"
-statnetyear <- "2003"
-
-networksistitle <- "networksis: Simulate bipartite graphs with fixed marginals through sequential importance sampling"
-networksisdesc <- packageDescription("networksis")
-networksisversion <- networksisdesc$Version
-networksisdate <- networksisdesc$Date
-networksisyear <- "2007"
-networksisauthors <- c("Ryan Admiraal", "Mark S. Handcock")
-
-citHeader(
-   "'networksis' is part of the statnet suite of packages.  ",
-   'Please read the license using license.statnet("networksis").\n\n',
-   "If you are using the 'networksis' package for research that will be published, ",
-   "we request that you acknowledge this by citing 'statnet' as shown below.\n\n",
-   "To cite the individual package 'networksis', please use the second citation below.\n\n",
-   'For BibTeX format, use toBibtex(citation("networksis")).',
-   sep="")
-   
-citEntry(entry = "Manual",
-         textVersion = paste(paste(authors, collapse=", "), " (", statnetyear,
-                             "). ", statnettitle, ". Version ", statnetversion,
-                             ". Project home page at ", projhomepage, 
-                             ". URL http://CRAN.R-project.org/package=statnet.",
-                             sep=""),
-         title = statnettitle, 
-         author = authors, 
-         year = statnetyear,
-         note = paste("Version ", statnetversion, ". Project home page at ",
-                      "\\ url{", projhomepage, "}", sep=""),
-         address = "Seattle, WA",
-         url = "http://CRAN.R-project.org/package=statnet")
+cat("'networksis' is part of the statnet suite of packages.\n")
+cat('Please read the license using license.statnet("networksis")\n\n')
+cat("If you are using the 'networksis' package for research that will be published,\n")
+cat("we request that you acknowledge this with the following citation:\n\n")
+cat("  Mark S. Handcock, David R. Hunter, Carter T. Butts, Steven M. Goodreau,\n")
+cat("  and Martina Morris (2003) statnet: Software Tools for the Statistical\n")
+cat("  Modeling of Network Data. Version 2.0,\n")
+cat("  URL http://statnetproject.org.\n\n")
+cat("A BibTeX entry for LaTeX users is\n\n")
+cat("  @Manual{,\n")
+cat("    title = {statnet: Software Tools for the Statistical Modeling of Network Data},\n")
+cat("    author = {Mark S. Handcock and David R. Hunter and Carter T. Butts and Steven M. Goodreau and Martina Morris},\n")
+cat("    year = {2003},\n")
+cat("    note = {Version 2.0},\n")
+cat("    address = {Seattle, WA},\n")
+cat("    url = {http://statnetproject.org},\n")
+cat("  }\n")
+citHeader("To cite the individual package 'networksis' please use:")
 
 citEntry(entry="Manual",
-         author = networksisauthors,
-         title = networksistitle,
-         year         = networksisyear,
-         note         = paste("Version ", networksisversion,
-                        ".  Project home page at \\ url{", projhomepage, "}", 
-                        sep=""),
+         title = "networksis: Simulate bipartite graphs with fixed marginals through sequential importance sampling",
+         author = personList(as.person("Ryan Admiraal"),
+                             as.person("Mark S. Handcock")),
+         year         = 2008,
+         note         = paste("Version",substring(library(help="networksis",lib.loc=NULL,character.only=TRUE)$info[[1]][2],first=16)),
          address      = "Seattle, WA",
-         url          = "http://CRAN.R-project.org/package=networksis",
-         textVersion = paste(paste(authors, collapse=", "), " (", networksisyear,
-               "), ", networksistitle, ". Version ", networksisversion,
-               ". Project home page at ", projhomepage,
-               ". URL http://CRAN.R-project.org/package=networksis.",
+         url          = "http://statnetproject.org",
+         
+         textVersion = 
+         paste("Ryan Admiraal and Mark S. Handcock (2007) ", 
+               "networksis: Simulate bipartite graphs with fixed marginals through sequential importance sampling. Version ",
+substring(library(help="networksis",lib.loc=NULL,character.only=TRUE)$info[[1]][2],first=16),
+         ",", " URL http://statnetproject.org.",
                sep="")
          )
 
-         
 citFooter("We have invested a lot of time and effort in creating the",
           "'statnet' suite of packages for use by other researchers.",
           "Please cite it in all papers where it is used.")
-          

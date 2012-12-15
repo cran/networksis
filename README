@@ -1,7 +1,5 @@
 This is an R package to randomly generate graphs with fixed marginals through 
 sequential importance sampling.  The algorithm used is that described in 
-Chen, Diaconis, Holmes, and Liu (2005).  This package is intended to be used with the
-'statnet' suite of packages (Handcock, Hunter, Butts, Goodreau, and Morris 2008). 
-
+Chen, Diaconis, Holmes, and Liu (2005) and Admiraal and Handcock (2008).  This package is intended to be used with the 'statnet' suite of packages (Handcock, Hunter, Butts, Goodreau, Krivitsky, and Morris 2003). 
 
 Ryan Admiraal

@@ -1,0 +1,17 @@
+315ea001f7a463be8efd2d384ca660b9 *DESCRIPTION
+803d2c07f4e3a634605e1e7bc13bfafd *LICENSE
+241c8f5ce216e37bbccb5ef14cb762a4 *NAMESPACE
+7497373e723535b8cec709bb8721b1f8 *R/simulate.network.R
+a1e22119211815a769de3f3601437704 *R/simulate.sisnetwork.R
+ab51c6b278a3045d4a6076f419fa3666 *R/zzz.R
+14c6eb2f631ea522f63d18f41a47eaa2 *README
+3aaf35f19004cce88aa2feba0e8d075b *data/finch.RData
+b155e9f7d204d39bb5ebbab16ac0cd81 *inst/CITATION
+a17213bb842492b2f4ff5930127f4477 *man/finch.Rd
+f5694203eeb480ae43554975ec64a670 *man/networksis-internal.Rd
+b2ac574fd5720648bfc97a49e93595ac *man/networksis-package.Rd
+c62759a74c36cbe88098ab36680e5cfa *man/simulate.sisnetwork.Rd
+3b2b46e14b9ea4456844b7dec7862ccf *src/sisfuns.c
+2e8699a1fff83497575df6bf6882e826 *src/sisfuns.h
+b35a0cc2b9e3b9fbb9626d51d6edbed6 *src/sissim.c
+69c21f30503dc274856e68821bc41bce *src/sissim.h
