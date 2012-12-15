@@ -9,13 +9,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \name{networksis-internal}
-\title{Internal networksis Objects}
+\title{Internal networksis objects}
 % terms
 \alias{simulate.network}
-\description{
-  Internal networksis functions.
-}
-\details{
-  Most of these functions are not to be called by the user.
-}
+\description{Internal networksis functions.}
+\details{Most of these functions are not to be called by the user.}
 \keyword{internal}

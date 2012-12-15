@@ -10,34 +10,24 @@
 \name{simulate.sisnetwork}
 \alias{simulate.sisnetwork}
 \title{Simulate a bipartite network using sequential importance sampling}
-\usage{
-\method{simulate}{sisnetwork}(object, nsim = 1, seed = NULL, save.networks = FALSE, \dots)
-}
-\description{
-The method \code{simulate.sisnetwork} simulates graphs with the same marginals as the passed network through sequential importance sampling.  That is, the degrees of the nodes are fixed and specified.
-}
+\description{The method \code{simulate.sisnetwork} simulates graphs with the same marginals as the passed network through sequential importance sampling.  That is, the degrees of the nodes are fixed and specified.}
+\usage{\method{simulate}{sisnetwork}(object, nsim = 1, seed = NULL, save.networks = FALSE, \dots)}
 \arguments{
- \item{object}{a \code{sisnetwork} object. This should be 
-   a list with components \code{row} and \code{col} to specify the row and column degrees. These are the degrees of the type 1 and type 2 nodes, respectively.}
- \item{nsim}{Number of networks to be randomly drawn from the set of all networks.}
- \item{seed}{Seed for random number generator.}
- \item{save.networks}{If this is \code{TRUE}, the sampled networks are returned. Otherwise only the last network is returned.}
- \item{\dots}{Further arguments passed to or used by methods.}
+\item{object}{A \code{sisnetwork} object. This should be a list with components \code{row} and \code{col} to specify the row and column degrees. These are the degrees of the type 1 and type 2 nodes, respectively.}
+\item{nsim}{Number of networks to be randomly drawn from the set of all networks.}
+\item{seed}{Seed for random number generator.}
+\item{save.networks}{If this is \code{TRUE}, the sampled networks are returned. Otherwise only the last network is returned.}
+\item{\dots}{Further arguments passed to or used by methods.}
 }
-
-\details{
-  A sample of networks is randomly drawn from the space of networks with the 
-  same degrees for each node.
-}
-
-\value{\code{\link[stats]{simulate}} returns an object of class \code{network.series} 
-  that is a list consisting of the following elements:
-  \item{networks}{The vector of simulated networks.}
-  \item{log.prob}{The vector of the logarithm of the probability of being sampled.}
-  \item{log.graphspace.size}{The logarithm of the mean estimate of the number of graphs in the graph space.}
-  \item{log.graphspace.SE}{The logarithm of the standard error of the mean estimate of the number of graphs in the graph space.}
-  \item{log.graphspace.size.lne}{The logarithm of the lognormal-based  estimate of the number of graphs in the graph space.}
-  \item{log.graphspace.SE.lne}{The logarithm of the standard error of the lognormal-based  estimate of the number of graphs in the graph space.}
+\details{A sample of networks is randomly drawn from the space of networks with the same degrees for each node.}
+\value{
+\code{\link[stats]{simulate}} returns an object of class \code{network.series}, that is a list consisting of the following elements:
+\item{networks}{The vector of simulated networks.}
+\item{log.prob}{The vector of the logarithm of the probability of being sampled.}
+\item{log.graphspace.size}{The logarithm of the mean estimate of the number of graphs in the graph space.}
+\item{log.graphspace.SE}{The logarithm of the standard error of the mean estimate of the number of graphs in the graph space.}
+\item{log.graphspace.size.lne}{The logarithm of the lognormal-based  estimate of the number of graphs in the graph space.}
+\item{log.graphspace.SE.lne}{The logarithm of the standard error of the lognormal-based  estimate of the number of graphs in the graph space.}
 }
 \seealso{network}
 \examples{

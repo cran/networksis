@@ -1,4 +1,4 @@
-cat("'networksis' is part of the statnet suite of packages.\n")
+cat("'networksis' is part of the 'statnet' suite of packages.\n")
 cat('Please read the license using license.statnet("networksis")\n\n')
 cat("If you are using the 'networksis' package for research that will be published,\n")
 cat("we request that you acknowledge this with the following citation:\n\n")
@@ -27,7 +27,7 @@ citEntry(entry="Manual",
          url          = "http://statnetproject.org",
          
          textVersion = 
-         paste("Ryan Admiraal and Mark S. Handcock (2007) ", 
+         paste("Ryan Admiraal and Mark S. Handcock (2008) ", 
                "networksis: Simulate bipartite graphs with fixed marginals through sequential importance sampling. Version ",
 substring(library(help="networksis",lib.loc=NULL,character.only=TRUE)$info[[1]][2],first=16),
          ",", " URL http://statnetproject.org.",

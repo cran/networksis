@@ -10,7 +10,7 @@
 
 .onAttach <- function(lib, pkg)
 {
-	library.dynam("networksis", package = pkg, lib.loc = lib)
+#	library.dynam("networksis", package = pkg, lib.loc = lib)
 	info <- packageDescription("networksis")
 	packageStartupMessage(paste('\nnetworksis: version ', info$Version, ', created on ', info$Date, '\n',
 	"Copyright (c) 2008, Ryan Admiraal, Murdoch University\n",
