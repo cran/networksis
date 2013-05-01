@@ -1,12 +1,11 @@
-b0c615bce5ced0e0b7b45d54fb39c23f *DESCRIPTION
-0e0ac697a2f0baeb94af1ef91e268110 *LICENSE
+0b126130b5b678f32807e4dcc6d86106 *DESCRIPTION
 5ddda0f95f836226f22fff71a396ba6e *NAMESPACE
 7497373e723535b8cec709bb8721b1f8 *R/simulate.network.R
-a1e22119211815a769de3f3601437704 *R/simulate.sisnetwork.R
+30fc0fbb534dc28fe1c7f8dca0e729cf *R/simulate.sisnetwork.R
 1bff3e605dad5a5a9747bb34a064b931 *R/zzz.R
 14c6eb2f631ea522f63d18f41a47eaa2 *README
 3aaf35f19004cce88aa2feba0e8d075b *data/finch.RData
-e3a5f87dac73bdf2f70eb598cd8bbb84 *inst/CITATION
+844c914b025206b3f401b37ffe942439 *inst/CITATION
 a17213bb842492b2f4ff5930127f4477 *man/finch.Rd
 cb46db616fca0dcf07747a21e74bce99 *man/networksis-internal.Rd
 7fe6b15545146a15e3b61b2ea83d3762 *man/networksis-package.Rd

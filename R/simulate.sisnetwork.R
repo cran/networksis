@@ -64,8 +64,14 @@ simulate.sisnetwork <- function(object, nsim = 1, seed = NULL, save.networks = F
 		probvec[i] <- s$probvec
 		if(save.networks)
 		{
-			mat[1 : nrow.nonnull, 1 : ncol.nonnull] <- matrix(s$newmat, ncol = ncol.nonnull)[, order(order.col.sums)]
-			out.list[[i]] <- network::as.network.matrix(mat, matrix.type = "bipartite")
+			mat[1 : nrow.nonnull, 1 : ncol.nonnull] <- matrix(s$newmat, ncol = ncol.nonnull)
+			mat <- mat[, order(order.col.sums)]
+			if(nsim > 1)
+			{
+				out.list[[i]] <- network::as.network.matrix(mat, matrix.type = "bipartite")
+			} else{
+				out.list <- network::as.network.matrix(mat, matrix.type = "bipartite")
+			}
 		}
 	}
 
