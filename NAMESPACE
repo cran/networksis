@@ -1,12 +1,13 @@
 useDynLib(networksis)
 
 importFrom(utils, packageDescription)
+importFrom("stats", "simulate")
+
+# Import all packages listed as Imports or Depends
+import(network)
 
 # Export all names
 exportPattern(".")
 
-# Import all packages listed as Imports or Depends
-import(
-  ergm,
-  network
-)
+S3method(simulate, sisnetwork)
+

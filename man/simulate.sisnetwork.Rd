@@ -10,10 +10,10 @@
 \name{simulate.sisnetwork}
 \alias{simulate.sisnetwork}
 \title{Simulate a bipartite network using sequential importance sampling}
-\description{The method \code{simulate.sisnetwork} simulates graphs with the same marginals as the passed network through sequential importance sampling.  That is, the degrees of the nodes are fixed and specified.}
+\description{The method \code{simulate.sisnetwork} simulates graphs with the same marginals as the passed network or as the rows and columns specified in a \code{sisnetwork} object through sequential importance sampling.  That is, the degrees of the nodes are fixed and specified.}
 \usage{\method{simulate}{sisnetwork}(object, nsim = 1, seed = NULL, save.networks = FALSE, \dots)}
 \arguments{
-\item{object}{A \code{sisnetwork} object. This should be a list with components \code{row} and \code{col} to specify the row and column degrees. These are the degrees of the type 1 and type 2 nodes, respectively.}
+\item{object}{Either a \code{network} object or \code{sisnetwork} object. If a \code{sisnetwork} object, this should be a list with components \code{row} and \code{col} to specify the row and column degrees. These are the degrees of the type 1 and type 2 nodes, respectively.}
 \item{nsim}{Number of networks to be randomly drawn from the set of all networks.}
 \item{seed}{Seed for random number generator.}
 \item{save.networks}{If this is \code{TRUE}, the sampled networks are returned. Otherwise only the last network is returned.}
@@ -21,7 +21,7 @@
 }
 \details{A sample of networks is randomly drawn from the space of networks with the same degrees for each node.}
 \value{
-\code{\link[stats]{simulate}} returns an object of class \code{network.series}, that is a list consisting of the following elements:
+\code{simulate.sisnetwork} returns an object of class \code{network.series}, that is a list consisting of the following elements:
 \item{networks}{The vector of simulated networks.}
 \item{log.prob}{The vector of the logarithm of the probability of being sampled.}
 \item{log.graphspace.size}{The logarithm of the mean estimate of the number of graphs in the graph space.}
@@ -38,7 +38,7 @@ example.net <- network(bipartite.graph)
 example.net \%v\% "set" <- c(rep(1, 3),rep(2, 4))
 
 # Simulate 100 graphs with the same marginals as 'example.net'
-sim <- simulate(example.net, nsim = 100)
+sim <- simulate.sisnetwork(example.net, nsim = 100)
 
 # Estimated graph space size and SE
 exp(sim$log.graphspace.size)
@@ -47,7 +47,7 @@ exp(sim$log.graphspace.SE)
 # Darwin's finches example
 data(finch)
 
-sim <- simulate(finch, nsim = 100, save.networks = TRUE)
+sim <- simulate.sisnetwork(finch, nsim = 100, save.networks = TRUE)
 
 # Calculate importance weights from the graph probabilities
 importance.weights <- 1 / exp(sim$log.prob)

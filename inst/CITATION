@@ -1,18 +1,22 @@
-desc <- packageDescription("networksis")
-year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", desc$Date)
-vers <- paste("R package version", desc$Version)
+citHeader("'networksis' is part of the Statnet suite of packages.\n If you are using 'networksis' for research that will be published, we request that you acknowledge this with the following citation:")
 
-citHeader("'networksis' is part of the 'statnet' suite of packages for the statistical modeling of network data.  (See http://statnet.org for more information.)\n\nThis version of 'networksis' is currently licensed under the GNU Public License, v2 or later.\n\nIf you are using 'networksis' for research that will be published, we request that you acknowledge this with the following citation:\n\n")
-
-citEntry(entry="Manual",
-         title = "networksis: Simulate bipartite graphs with fixed marginals through sequential importance sampling",
+bibentry(bibtype="Manual",
+         title = paste(meta$Package,": ", meta$Title, sep=""),
          author = personList(as.person("Ryan Admiraal"),
                              as.person("Mark S. Handcock")),
-         year = 2008,
-         note = vers,
-         address = "Seattle, WA",
-         url = "http://statnetproject.org",
-         textVersion = paste("Ryan Admiraal and Mark S. Handcock (2008) ", "networksis: Simulate bipartite graphs with fixed marginals through sequential importance sampling. Version ", substring(library(help = "networksis", lib.loc = NULL, character.only = TRUE)$info[[1]][2], first = 16), ",", " URL http://statnetproject.org.", sep = "")
+         year         = substr(meta$Date,1,4),
+         note         = paste("R package version ", meta$Version, ". Project home page at http://statnet.org",sep=""),
+         address      = "Murdoch WA Australia",
+         url          = "http://CRAN.R-project.org/package=networksis",
+         
+         textVersion = 
+         paste("Ryan Admiraal and Mark S. Handcock (2008) ", 
+               paste(meta$Package,": ", meta$Title, sep=""),
+               ", Version ", meta$Version, ". Project home page at http://statnet.org",
+               ",", " URL http://CRAN.R-project.org/package=networksis.",
+               sep="")
          )
 
-citFooter("We have invested a lot of time and effort in creating the\n'statnet' suite of packages for use by other researchers.\nPlease cite it in all papers where it is used.")
+citFooter("We have invested a lot of time and effort in creating the",
+          "Statnet suite of packages for use by other researchers.",
+          "Please cite it in all papers where it is used.")

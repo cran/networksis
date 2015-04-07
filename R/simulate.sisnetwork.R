@@ -10,8 +10,15 @@
 
 simulate.sisnetwork <- function(object, nsim = 1, seed = NULL, save.networks = FALSE, ...)
 {
-	if(!("sisnetwork" %in% class(object)))
-		stop("simulate.sisnetwork requires an object of class 'sisnetwork'.")
+	if(class(object) == "network")
+	{
+	    object <- network::as.sociomatrix(object)
+    	object <- list(rows = apply(object, 1, sum), cols = apply(object, 2, sum))
+	    class(object) <- "sisnetwork"
+	} else if(!("sisnetwork" %in% class(object)))
+	{
+		stop("simulate.sisnetwork requires an object of class 'sisnetwork' or 'network'.")
+	}
 
 	if(save.networks)
 		out.list <- vector("list", nsim)

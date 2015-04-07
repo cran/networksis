@@ -1,21 +1,17 @@
-#  File networksis/R/zzz.R
-#  Part of the statnet package, http://statnet.org
-#
-#  This software is distributed under the GPL-3 license.  It is free,
-#  open source, and has the attribution requirements (GPL Section 7) in
-#    http://statnet.org/attribution
-#
-#  Copyright 2012 the statnet development team
-#########################################################################
+.onLoad <-function(libname, pkgname){
+  library.dynam("networksis", package=pkgname, lib.loc=libname)
+}
 
-.onAttach <- function(lib, pkg)
-{
-#	library.dynam("networksis", package = pkg, lib.loc = lib)
-	info <- packageDescription("networksis")
-	packageStartupMessage(paste('\nnetworksis: version ', info$Version, ', created on ', info$Date, '\n',
-	"Copyright (c) 2008, Ryan Admiraal, Murdoch University\n",
-	"                    Mark S. Handcock, University of California-Los Angeles\n",
-	'Based on "statnet" project software (statnet.org).\n',
-	'For license and citation information see statnet.org/attribution\n',
-	'or type citation("networksis").\n', sep = ""))
+.onAttach <- function(libname, pkgname){
+  temp<-packageDescription("networksis")
+  msg<-paste(temp$Package,": ",temp$Title,"\n",
+      "Version ",temp$Version,
+      " created on ",
+      temp$Date,".\n", sep="")
+  msg<-paste(msg,"copyright (c) 2008, Ryan Admiraal, Murdoch University\n",sep="")
+  msg<-paste(msg,'Based on "statnet" project software (statnet.org).\n')
+  msg<-paste(msg,'For license and citation information see statnet.org/attribution\n')
+  msg<-paste(msg,'For citation information, type citation("networksis").\n')
+  msg<-paste(msg,'Type help("networksis-package") to get started.\n')
+  packageStartupMessage(msg)
 }

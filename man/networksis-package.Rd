@@ -10,7 +10,7 @@
 \name{networksis-package}
 \alias{networksis-package}
 \docType{package}
-\title{Simulate bipartite graphs with fixed marginals through sequential importance sampling}
+\title{Simulate Bipartite Graphs with Fixed Marginals Through Sequential Importance Sampling}
 \description{The \code{\link[=networksis-package]{networksis}} package is a collection of functions to simulate bipartite graphs with fixed marginals.  For a list of functions, type: 
 \code{help(package="networksis")}
 
@@ -21,6 +21,8 @@ or read the rest of the manual.
 This package is compatible with the \pkg{statnet} suite of packages, a collection of functions to plot, fit, diagnose, and simulate from random graph models. When publishing results obtained using this package, the original authors are to be cited as:
 
 Admiraal, Ryan and Mark S. Handcock (2008). \emph{networksis: Simulate bipartite graphs with fixed marginals through sequential importance sampling}. \cr \url{statnet.org}. 
+
+Admiraal, Ryan and Mark S. Handcock (2008). networksis: A package to simulate bipartite graphs with fixed marginals through sequential importance sampling, \emph{Journal of Statistical Software}, 24(8). 
 
 You should also cite the developers of the 'statnet' suite of packages:
 
@@ -47,7 +49,7 @@ go to the \code{\link[=networksis-package]{networksis}} website:
 \url{statnet.org}.
 A tutorial, support newsgroup, references and links to further resources are provided there.}
 \references{
-Admiraal, Ryan and Mark S. Handcock (2008).  \pkg{networksis}: Simulate bipartite graphs with fixed marginals through sequential importance sampling.  Statnet Project, Seattle, WA.  Version 2.0, \url{statnet.org}.
+Admiraal, Ryan and Mark S. Handcock (2008).  \pkg{networksis}: Simulate bipartite graphs with fixed marginals through sequential importance sampling.  Statnet Project, Seattle, WA.  Version 2.1-3, \url{statnet.org}.
 
 Admiraal, Ryan and Mark S. Handcock (2008). networksis: A package to simulate bipartite graphs with fixed marginals through sequential importance sampling, \emph{Journal of Statistical Software}, 24(8). 
 
